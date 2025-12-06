@@ -9,7 +9,7 @@
 
 .body {
     font-family: 'Poppins', sans-serif;
-    min-height: 3000px;
+    min-height: 8000px;
 }
 
 /* navbar*/
@@ -135,17 +135,20 @@
 
 
 /* About Section */
-.service {
+.service,
+.contact {
     padding: 8rem 7% 1.4rem;
 }
 
-.service h2 {
+.service h2,
+.contact h2 {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
 }
 
-.service h2 span {
+.service h2 span,
+.contact h2 span {
     color: rgb(240, 202, 132);
 }
 
@@ -183,7 +186,8 @@
     padding: 8rem 7% 1.4rem;
 }
 
-.about h2 {
+.about h2,
+.contact h2 {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
@@ -193,13 +197,72 @@
     color: rgb(240, 202, 132);
 }
 
-.about p {
+.about p,
+.contact p {
     text-align: center;
     max-width: 30rem;
     margin: auto;
     font-weight: 100;
     list-style: 1.6;
 }
+
+.about .row {
+    display: flex;
+    flex-wrap: warp;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.about .row .about-card {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.about .row .about-card img {
+    border-radius: 50%;
+    width: 80%;
+}
+
+.about .row .about-card .about-card-title {
+    margin-top: 1rem auto o.5rem;
+}
+
+/* Contact Section */
+.contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #fff;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .input-group {
+    display: flex;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.7rem;
+    background-color: none;
+}
+
+
 
 /*Media Quaries*/
 
@@ -275,6 +338,10 @@
 
     .service .row .content p {
         font-size: 1.6rem;
+    }
+
+    .about .row p {
+        font-size: 1.2rem;
     }
 }
 
