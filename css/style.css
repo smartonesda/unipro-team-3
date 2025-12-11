@@ -34,6 +34,7 @@ body {
     left: 0;
     right: 0;
     z-index: 999999;
+    animation: slideDownNavbar 0.8s ease-out;
 }
 
 .navbar .navLogo a {
@@ -43,8 +44,10 @@ body {
     font-style: italic;
 }
 
+
 .navbar .navLogo span {
     color: rgb(236, 138, 185);
+    animation: slideInDown 1s ease-out, glow 2.5s ease-in-out infinite;
 }
 
 .navbar .navBar-nav a {
@@ -78,17 +81,6 @@ body {
 
 .navbar .navbar-Icons a:hover {
     color: rgb(0, 0, 0);
-}
-
-/* Default: Search icon visible */
-#search {
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* Default: Search input hidden */
-.search-input-desktop {
-    display: none;
 }
 
 /* Active menu saat scroll */
@@ -131,6 +123,8 @@ body {
 .home .content {
     padding: 1.4rem 7%;
     max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .home .content h1 {
@@ -138,19 +132,22 @@ body {
     color: #b435b4;
     text-shadow: 1px 1px 3px rgba(42, 139, 196, 0.5);
     line-height: 1.2;
+    animation: slideInDown 1s ease-out, glow 2.5s ease-in-out infinite;
 }
 
 .home .content span {
     color: rgb(15, 53, 133);
+    animation: colorShift 3s ease-in-out infinite;
 }
 
 .home .content p {
-    color: black;
+    color: #1b4fa8;
     font-size: 1.6rem;
     margin-top: 1rem;
     line-height: 1.4;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .home .content .cta {
@@ -162,6 +159,87 @@ body {
     background-image: linear-gradient(90deg, #1b4fa8, #6b4fa8, #c21878);
     border-radius: 0.5rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    animation: bounceIn 1s ease-out 0.6s both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home .content .cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 1px 1px 3px rgba(42, 139, 196, 0.5);
+        color: #b435b4;
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(236, 138, 185, 0.8), 1px 1px 3px rgba(42, 139, 196, 0.5);
+        color: #d65cc4;
+    }
+}
+
+@keyframes colorShift {
+    0%, 100% {
+        color: rgb(15, 53, 133);
+    }
+
+    50% {
+        color: rgb(0, 93, 215);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDownNavbar {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -176,6 +254,7 @@ body {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
+    color: #fff;
 }
 
 .about h2 span,
@@ -193,6 +272,94 @@ body {
 
 .about .row .about-img img {
     width: 100%;
+    border: 4px solid #0e2f68;
+    border-radius: 10% 25%;
+    animation: slideInLeft 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about .row .about-img img:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scroll Animation untuk Semua Image */
+img.scroll-animate {
+    animation: fadeSlideUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Animasi berbeda untuk setiap tipe img menggunakan nth-child */
+.about .row .about-img img.scroll-animate {
+    animation: scrollSlideUp 0.8s ease-out;
+}
+
+.team .team-card img.scroll-animate {
+    animation: zoomFadeIn 0.8s ease-out;
+}
+
+.contact .row .map.scroll-animate {
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* Default scroll animation untuk img lainnya */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotateX(10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+@keyframes zoomFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about .row .content {
@@ -418,7 +585,7 @@ footer .credit a {
     }
 }
 
-@media (max-width: 1366px) and (min-width: 756px) {
+@media (max-width: 1366px) and (min-width: 891px) {
     html {
         font-size: 75%;
     }
@@ -455,6 +622,81 @@ footer .credit a {
         border-color: rgb(236, 138, 185);
         box-shadow: 0 0 10px rgba(236, 138, 185, 0.3);
         width: 220px;
+    }
+}
+
+/* Medium Devices 760px - 890px */
+@media (max-width: 890px) and (min-width: 756px) {
+    html {
+        font-size: 68%;
+    }
+
+    .navbar {
+        padding: 1rem 4%;
+    }
+
+    .navbar .navLogo a {
+        font-size: 20px;
+    }
+
+    .navbar .navBar-nav a {
+        margin: 0 0.7rem;
+        font-size: 1.1rem;
+    }
+
+    .navbar .navbar-Icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Hide search icon - input always visible */
+    #search {
+        display: none;
+    }
+
+    .search-input-desktop {
+        display: inline-block;
+        padding: 0.5rem 0.8rem;
+        border: 2px solid #fff;
+        border-radius: 0.3rem;
+        background: transparent;
+        color: #fff;
+        font-size: 0.9rem;
+        width: 140px;
+        transition: all 0.3s ease;
+    }
+
+    .search-input-desktop::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .search-input-desktop:focus {
+        outline: none;
+        border-color: rgb(236, 138, 185);
+        box-shadow: 0 0 10px rgba(236, 138, 185, 0.3);
+        width: 180px;
+    }
+
+    .home .content {
+        padding: 1rem 4%;
+        max-width: 50rem;
+    }
+
+    .home .content h1 {
+        font-size: 3.5em;
+    }
+
+    .home .content p {
+        font-size: 1.4rem;
+    }
+
+    .service, .about, .contact {
+        padding: 6rem 4% 1rem;
+    }
+
+    .team {
+        padding: 6rem 4% 1rem;
     }
 }
 
@@ -600,6 +842,7 @@ footer .credit a {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
+    color: rgb(0, 93, 215);
 }
 
 .team h2 span {
@@ -628,7 +871,7 @@ footer .credit a {
     border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(6px);
     /* ← efek blur di belakang */
-    border-radius: 0.8rem;
+    border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 1rem;
 }
