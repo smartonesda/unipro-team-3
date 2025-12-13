@@ -83,6 +83,33 @@ body {
     color: rgb(0, 0, 0);
 }
 
+/* Navbar CTA button on the right */
+.nav-cta {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    margin-right: 0.6rem;
+    background-image: linear-gradient(90deg, #1b4fa8, #6b4fa8, #c21878);
+    color: #fff;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+.nav-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+    opacity: 0.98;
+}
+
+@media (max-width: 755px) {
+    .nav-cta {
+        display: none;
+        /* hide CTA on small screens to keep menu simple */
+    }
+}
+
 /* Active menu saat scroll */
 .navBar-nav a.active {
     color: rgb(235, 165, 199);
@@ -103,7 +130,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url('../img/background.jpg');
+    background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.88), rgba(36, 58, 102, 0.36)), url('../img/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -404,6 +431,11 @@ img.scroll-animate {
     margin: 0 auto 3rem;
     font-weight: 300;
     line-height: 1.6;
+}
+
+.service li {
+    color: #fff;
+    font-weight: 600;
 }
 
 .service-container {
@@ -906,11 +938,11 @@ footer .credit a {
     background: #fff !important;
     color: #c21878 !important;
     border-radius: 50% !important;
-    width: 3rem !important;
-    height: 3rem !important;
-    font-size: 1.5rem !important;
+    width: 3.8rem !important;
+    height: 3.8rem !important;
+    font-size: 1.8rem !important;
     line-height: 1 !important;
-    margin: 0 5px !important;
+    margin: 0 6px !important;
     transition: 0.3s;
 }
 
@@ -944,5 +976,138 @@ footer .credit a {
 
     .team .team-card {
         padding: 1rem;
+    }
+}
+
+/* Manual carousel styles added for team slider */
+.team .team-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.team .team-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(.22, .61, .36, 1);
+    will-change: transform;
+    padding: 0 0.5rem;
+}
+
+.team .team-track .team-card {
+    margin: 0.5rem;
+    box-sizing: border-box;
+}
+
+.team .team-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    pointer-events: none;
+}
+
+.team .team-controls button {
+    pointer-events: auto;
+    background: transparent;
+    border-radius: 50%;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    transition: transform .28s cubic-bezier(.22, .61, .36, 1), color .18s ease, box-shadow .28s ease;
+}
+
+.team .team-controls button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(194, 24, 120, 0.08), rgba(15, 53, 133, 0.06));
+    transform: scale(0.85);
+    opacity: 0;
+    transition: opacity .28s ease, transform .28s cubic-bezier(.22, .61, .36, 1);
+    pointer-events: none;
+}
+
+.team .team-controls button svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.6px;
+    transition: transform .35s cubic-bezier(.22, .61, .36, 1);
+}
+
+.team .team-controls button:hover {
+    transform: translateY(-4px) scale(1.05) rotate(-6deg);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(194, 24, 120, 0.12);
+}
+
+.team .team-controls button:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.team .team-controls button:active {
+    transform: translateY(-1px) scale(.98) rotate(-3deg);
+}
+
+@keyframes float-icon {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-4px) rotate(-4deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.team .team-controls button:hover svg {
+    animation: float-icon .9s ease-in-out both;
+}
+
+.team-dots {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+.team-dots .team-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 6px;
+    background: rgba(255, 255, 255, 0.28);
+    border: 0;
+    cursor: pointer;
+}
+
+.team-dots .team-dot.active {
+    background: #c21878;
+}
+
+@media (max-width: 755px) {
+    .team .team-controls button {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .team .team-card img {
+        width: 11rem;
+        height: 11rem;
     }
 }
