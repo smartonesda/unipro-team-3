@@ -1083,3 +1083,57 @@ section>p {
 .stagger-3 {
     transition-delay: 600ms;
 }
+
+/* Floating WhatsApp Button */
+.floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(45deg, #25d366, #128c7e);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    z-index: 1000;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    animation: wa-pulse 2s infinite;
+}
+
+.floating-wa:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(45deg, #128c7e, #075e54);
+}
+
+@keyframes wa-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Typing Effect Cursor */
+.typing-text {
+    color: var(--accent);
+    /* Yellow/Secondary to pop */
+    border-right: 3px solid var(--accent);
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}

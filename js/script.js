@@ -297,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p style="margin-top:0.5rem; font-size:0.95rem;">${message}</p>
             `;
 
+
       if (showCta) {
         ctaDiv.style.display = 'block';
       } else {
@@ -307,4 +308,81 @@ document.addEventListener('DOMContentLoaded', () => {
       resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
   }
+});
+
+// WOW Factors: Typing Effect
+document.addEventListener('DOMContentLoaded', () => {
+  const textElement = document.querySelector('.typing-text');
+  if (!textElement) return;
+
+  const words = ["Gemilang", "Sehat", "Cerdas", "Bebas Stunting"];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 200;
+
+  function type() {
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      textElement.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 100;
+    } else {
+      textElement.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      typeSpeed = 200;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      typeSpeed = 2000; // Pause at end
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  type();
+});
+
+// WOW Factors: Counter Up Animation
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // The lower the slower
+
+  const countFunction = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-val');
+          const count = +counter.innerText;
+
+          // Lower increment = slower
+          const inc = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target + "+"; // Add plus sign
+          }
+        };
+        updateCount();
+        observer.unobserve(counter);
+      }
+    });
+  }
+
+  const counterObserver = new IntersectionObserver(countFunction, {
+    threshold: 0.5
+  });
+
+  counters.forEach(counter => {
+    counterObserver.observe(counter);
+  });
 });
