@@ -46,8 +46,8 @@ body {
 
 
 .navbar .navLogo span {
-    color: rgb(236, 138, 185);
-    animation: slideInDown 1s ease-out, glow 2.5s ease-in-out infinite;
+    color: rgb(0, 255, 221);
+    animation: slideInDown 1s ease-out, navGlow 2.5s ease-in-out infinite;
 }
 
 .navbar .navBar-nav a {
@@ -157,8 +157,10 @@ body {
 
 .home .content h1 {
     font-size: 5em;
-    color: #ff00ff;
-    text-shadow: 1px 1px 3px rgba(42, 139, 196, 0.5);
+    color: #fa65fa;
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 1px 1px 3px rgba(42, 139, 196, 0.5);
     line-height: 1.2;
     animation: slideInDown 1s ease-out, glow 2.5s ease-in-out infinite;
 }
@@ -210,7 +212,7 @@ body {
 
 @keyframes glow {
     0%, 100% {
-        text-shadow: 1px 1px 3px rgba(42, 139, 196, 0.5);
+        text-shadow: 1px 1px 3px rgb(0, 255, 221, 0.5);
         color: #b435b4;
     }
 
@@ -220,13 +222,25 @@ body {
     }
 }
 
-@keyframes colorShift {
+@keyframes navGlow {
     0%, 100% {
-        color: rgb(15, 53, 133);
+        text-shadow: 0 0 6px rgba(0, 255, 221, 0.6), 0 0 1px rgba(0, 255, 221, 0.6);
+        color: rgb(0, 255, 221);
     }
 
     50% {
-        color: rgb(0, 93, 215);
+        text-shadow: 0 0 18px rgba(0, 255, 221, 0.9), 0 0 6px rgba(0, 255, 221, 0.6);
+        color: rgb(0, 230, 200);
+    }
+}
+
+@keyframes colorShift {
+    0%, 100% {
+        color: rgb(0, 255, 221);
+    }
+
+    50% {
+        color: rgb(0, 255, 221);
     }
 }
 

@@ -39,14 +39,14 @@ document.addEventListener('click', function (e) {
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.navBar-nav a');
 
-window.addEventListener('scroll', () => {
+function updateActiveNav() {
   let current = '';
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.offsetHeight;
 
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
       current = section.getAttribute('id');
     }
   });
@@ -58,7 +58,13 @@ window.addEventListener('scroll', () => {
       link.classList.add('active');
     }
   });
-});
+}
+
+// Run on scroll and also when the page loads/refreshes so `Home` becomes active immediately
+window.addEventListener('scroll', updateActiveNav);
+document.addEventListener('DOMContentLoaded', updateActiveNav);
+window.addEventListener('load', updateActiveNav);
+window.addEventListener('resize', updateActiveNav);
 
 // Manual Team Slider (vanilla JS)
 document.addEventListener('DOMContentLoaded', () => {
