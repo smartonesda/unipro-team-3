@@ -4,13 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Smartone</title>
+    <title>Klinik Smartone - Pusat Pencegahan Stunting</title>
     <link rel="icon" href="img/download.png" type="image/jpeg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="top-bar-item">
+                <i data-feather="clock"></i>
+                <span>Senin - Sabtu: 08.00 - 17.00</span>
+            </div>
+            <div class="top-bar-item">
+                <i data-feather="phone"></i>
+                <span>+62 812 3456 7890</span>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="top-bar-item">
+                <a href="#" style="color:var(--text-muted);"><i data-feather="facebook"></i></a>
+            </div>
+            <div class="top-bar-item">
+                <a href="#" style="color:var(--text-muted);"><i data-feather="instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="navLogo">
             <a href="#">KLINIK<span>SMARTONE</span></a>
@@ -21,6 +53,7 @@
             <a href="#about">About</a>
             <a href="#service">Service</a>
             <a href="#team">Team</a>
+            <a href="#blog">Artikel</a>
             <a href="#contact">Contact</a>
         </div>
 
@@ -32,14 +65,49 @@
 
     <!-- Hero Section start -->
     <section class="home" id="home">
+        <!-- Hero Carousel -->
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('img/stunting-1.avif');"></div>
+            <div class="slide" style="background-image: url('img/stunting-2.avif');"></div>
+            <div class="slide" style="background-image: url('img/stunting-3.avif');"></div>
+            <div class="hero-overlay"></div>
+        </div>
+
         <div class="content">
-            <h1>Cegah Stunting, Ciptakan Masa Depan <span class="typing-text"></span></h1>
+            <h1>Cegah <span>Stunting</span>,<br>Ciptakan Masa Depan<br>
+                <span class="typing-text"></span>
+            </h1>
             <p>Bersama Klinik Smartone (Stunting Care), wujudkan generasi Indonesia yang bebas stunting, sehat, dan
                 cerdas.</p>
-            <a href="#kalkulator" class="cta">Cek Layanan Kami</a>
+            <a href="#kalkulator" class="btn-hero">Cek Layanan Kami</a>
         </div>
     </section>
     <!-- Hero Section end -->
+
+    <!-- Info Strip (New Feature) -->
+    <div class="info-strip">
+        <div class="info-box">
+            <h3>Emergency Cases</h3>
+            <p>Layanan darurat stunting dan gizi buruk prioritas.</p>
+            <a href="#contact" style="color:white; margin-top:10px; display:inline-block; font-weight:700;">HUBUNGI KAMI
+                ›</a>
+        </div>
+        <div class="info-box">
+            <h3>Doctors Timetable</h3>
+            <p>Jadwal praktik dokter spesialis anak dan ahli gizi.</p>
+            <a href="#team" style="color:white; margin-top:10px; display:inline-block; font-weight:700;">LIHAT JADWAL
+                ›</a>
+        </div>
+        <div class="info-box">
+            <h3>Opening Hours</h3>
+            <p>Senin - Jumat: 08.00 - 20.00<br>Minggu: 10.00 - 14.00</p>
+        </div>
+        <div class="info-box">
+            <h3>1000 HPK</h3>
+            <p>Program prioritas pencegahan stunting masa emas.</p>
+            <a href="#hpk" style="color:white; margin-top:10px; display:inline-block; font-weight:700;">PELAJARI ›</a>
+        </div>
+    </div>
 
     <!-- About section start -->
     <section id="about" class="about">
@@ -110,23 +178,51 @@
     <!-- Service section start (Refined) -->
     <section id="service" class="service">
         <h2><span>Layanan</span> Kami</h2>
-        <p>Solusi konkret untuk mendampingi tumbuh kembang buah hati Anda.</p>
+        <p class="desc">Solusi konkret untuk mendampingi tumbuh kembang buah hati Anda dengan standar medis terpercaya.
+        </p>
         <div class="service-container">
             <div class="service-card">
-                <i data-feather="activity" class="service-icon"></i>
-                <h3>Skrining Tumbuh Kembang</h3>
-                <p>Deteksi dini keterlambatan bicara (speech delay) atau motorik kasar/halus oleh Dokter Anak.</p>
+                <div class="service-img-holder">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Skrining">
+                </div>
+                <div class="service-icon-floating">
+                    <i data-feather="activity"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Skrining Tumbuh Kembang</h3>
+                    <p>Deteksi dini keterlambatan bicara (speech delay) atau motorik kasar/halus oleh Dokter Anak.</p>
+
+                </div>
             </div>
             <div class="service-card">
-                <i data-feather="heart" class="service-icon"></i>
-                <h3>Pojok Laktasi</h3>
-                <p>Konsultasi masalah menyusui, edukasi posisi & pelekatan yang benar, serta manajemen ASI perah.</p>
+                <div class="service-img-holder">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Laktasi">
+                </div>
+                <div class="service-icon-floating">
+                    <i data-feather="heart"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Pojok Laktasi</h3>
+                    <p>Konsultasi masalah menyusui, edukasi posisi & pelekatan yang benar, serta manajemen ASI perah.
+                    </p>
+
+                </div>
             </div>
             <div class="service-card">
-                <i data-feather="coffee" class="service-icon"></i>
-                <h3>Katering Sehat MPASI</h3>
-                <p>Layanan katering harian MPASI sesuai usia dan kebutuhan kalori anak, bebas Gula Garam (untuk <1
-                        th).</p>
+                <div class="service-img-holder">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Katering">
+                </div>
+                <div class="service-icon-floating">
+                    <i data-feather="coffee"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Katering Sehat MPASI</h3>
+                    <p>Layanan katering harian MPASI sesuai usia dan kebutuhan kalori anak, bebas Gula Garam.</p>
+
+                </div>
             </div>
         </div>
     </section>
@@ -263,27 +359,39 @@
         <p>Pahami fakta dan mitos seputar stunting demi masa depan anak.</p>
         <div class="blog-container">
             <div class="blog-card">
-                <div class="blog-img"></div>
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Anak Pendek" style="width:100%; height:100%; object-fit:cover;">
+                </div>
                 <div class="blog-content">
                     <span class="blog-tag">Mitos vs Fakta</span>
                     <h3>"Anak Pendek Belum Tentu Stunting, Tapi Stunting Pasti Pendek"</h3>
-                    <a href="#" class="blog-link">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    <a href="artikel/anak-pendek-vs-stunting.html" class="blog-link">Baca Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
                 </div>
             </div>
             <div class="blog-card">
-                <div class="blog-img"></div>
+                <div class="blog-img">
+                    <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Anak Pendek" style="width:100%; height:100%; object-fit:cover;">
+                </div>
                 <div class="blog-content">
                     <span class="blog-tag">Gizi</span>
                     <h3>Pentingnya Protein Hewani untuk Cegah Stunting</h3>
-                    <a href="#" class="blog-link">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    <a href="artikel/pentingnya-protein-hewani.html" class="blog-link">Baca Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
                 </div>
             </div>
             <div class="blog-card">
-                <div class="blog-img"></div>
+                <div class="blog-img">
+                    <img src="https://media.istockphoto.com/id/2162119231/photo/a-baby-drinking-milk-using-bottle.webp?a=1&b=1&s=612x612&w=0&k=20&c=WDd8iAAnYFLYXKeYP95ymce5dh_vs3s15K7d-YkDrfE="
+                        alt="Anak Pendek" style="width:100%; height:100%; object-fit:cover;">
+                </div>
                 <div class="blog-content">
                     <span class="blog-tag">Tips</span>
                     <h3>Mitos atau Fakta: Susu Formula Lebih Baik dari ASI?</h3>
-                    <a href="#" class="blog-link">Baca Selengkapnya <i data-feather="arrow-right"></i></a>
+                    <a href="artikel/mitos-fakta-sufor-vs-asi.html" class="blog-link">Baca Selengkapnya <i
+                            data-feather="arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -363,22 +471,57 @@
     <!-- Contact section end -->
 
     <footer>
-        <div class="social">
-            <a href="#"><i data-feather="facebook"></i></a>
-            <a href="#"><i data-feather="instagram"></i></a>
-            <a href="#"><i data-feather="twitter"></i></a>
-        </div>
+        <div class="footer-container">
+            <!-- Column 1: Contact Details -->
+            <div class="footer-col">
+                <h3>Contact Details</h3>
+                <div class="footer-contact-item">
+                    <i data-feather="map-pin"></i>
+                    <p>Jl. Siwalanpanji No. 8, Sidoarjo,<br>Jawa Timur, Indonesia</p>
+                </div>
+                <div class="footer-contact-item">
+                    <i data-feather="phone"></i>
+                    <p>+62 812 3456 7890<br>+62 31 896 2309</p>
+                </div>
+                <div class="footer-contact-item">
+                    <i data-feather="mail"></i>
+                    <p>admin@klinik-smartone.com<br>info@stuntingcare.id</p>
+                </div>
+                <div class="social fa-social">
+                    <a href="https://facebook.com/smksantartika1sda"><i data-feather="facebook"></i></a>
+                    <a href="https://instagram.com/smksantartika1sda"><i data-feather="instagram"></i></a>
+                    <a href="https://twitter.com/smksantartika1sda"><i data-feather="twitter"></i></a>
+                </div>
+            </div>
 
-        <div class="links">
-            <a href="#home">Home</a>
-            <a href="#service">Layanan</a>
-            <a href="#mpasi">MPASI</a>
-            <a href="#imunisasi">Imunisasi</a>
-            <a href="#kalkulator">Cek Gizi</a>
+            <!-- Column 2: Our Services -->
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#service">Skrining Tumbuh Kembang</a></li>
+                    <li><a href="#service">Pojok Laktasi</a></li>
+                    <li><a href="#service">Katering Sehat MPASI</a></li>
+                    <li><a href="#imunisasi">Imunisasi Dasar</a></li>
+                    <li><a href="#kalkulator">Cek Status Gizi</a></li>
+                    <li><a href="#team">Konsultasi Dokter</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Working Hours -->
+            <div class="footer-col">
+                <h3>Working Hours</h3>
+                <ul class="working-hours">
+                    <li><span>Senin - Jumat</span> <span>08.00 - 20.00</span></li>
+                    <li><span>Sabtu</span> <span>08.00 - 17.00</span></li>
+                    <li><span>Minggu</span> <span>10.00 - 14.00</span></li>
+                    <li><span>Hari Libur</span> <span>Tutup</span></li>
+                </ul>
+                <a href="#contact" class="btn-footer">Buat Janji Temu</a>
+            </div>
         </div>
 
         <div class="credit">
-            <p>Created by <a href>UNITY</a>. | ©2025.</p>
+            <p>Created by <a href>UNITY</a>. | ©2025 Klinik Smartone Theme by Medicare ATM.</p>
         </div>
     </footer>
 

@@ -23,6 +23,9 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.navBar-nav a');
 
 function updateActiveNav() {
+  // Only run scroll spy on homepage (where #home exists)
+  if (!document.querySelector('#home')) return;
+
   let current = '';
 
   sections.forEach(section => {
@@ -360,6 +363,32 @@ document.addEventListener('DOMContentLoaded', () => {
   type();
 });
 
+// Contact Form Handler
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('.contact form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const inputs = this.querySelectorAll('input');
+      const name = inputs[0].value;
+      const contact = inputs[1].value; // Email/WA
+      const message = inputs[2].value;
+
+      if (!name || !contact || !message) {
+        alert('Mohon lengkapi semua data.');
+        return;
+      }
+
+      const subject = `Konsultasi Stunting - ${name}`;
+      const body = `Halo Admin Klinik Smartone,%0D%0A%0D%0ASaya ingin berkonsultasi.%0D%0A%0D%0ANama: ${name}%0D%0AKontak (Email/WA): ${contact}%0D%0APesan/Keluhan:%0D%0A${message}%0D%0A%0D%0ATerima Kasih.`;
+
+      // Open Mail Client
+      window.location.href = `mailto:admin@smartone.id?subject=${subject}&body=${body}`;
+    });
+  }
+});
+
 // WOW Factors: Counter Up Animation
 document.addEventListener('DOMContentLoaded', () => {
   const counters = document.querySelectorAll('.counter');
@@ -396,4 +425,21 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(counter => {
     counterObserver.observe(counter);
   });
+});
+
+// Hero Carousel Logic
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  if (slides.length === 0) return;
+
+  let currentSlide = 0;
+  const slideInterval = 5000; // 5 seconds
+
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  setInterval(nextSlide, slideInterval);
 });
