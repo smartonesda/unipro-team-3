@@ -1467,4 +1467,13 @@ footer {
         padding: 12px 30px;
         font-size: 13px;
     }
+
+    .calc-container {
+        padding: 1rem;
+    }
+
+    .btn-back {
+        width: 100%;
+        padding: .5rem 1rem;
+    }
 }
