@@ -1481,4 +1481,8 @@ footer {
     .contact form {
         padding: 1rem !important;
     }
+
+    .contact form input {
+        padding-left: 1rem;
+    }
 }
